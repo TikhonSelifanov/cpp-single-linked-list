@@ -288,25 +288,6 @@ public:
         return Iterator{pos.node_->next_node};
     }
 
-    void PushBack(const Type& val)
-    {
-        Node* newNode = new Node(val, nullptr);
-        if (head_.next_node == nullptr)
-        {
-            head_.next_node = newNode;
-        }
-        else
-        {
-            Node* temp = &head_;
-            while (temp->next_node != nullptr)
-            {
-                temp = temp->next_node;
-            }
-            temp->next_node = newNode;
-        }
-        ++size_;
-    }
-
     void PushFront(const Type& value)
     {
         head_.next_node = new Node(value, head_.next_node);
